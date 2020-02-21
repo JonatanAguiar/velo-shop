@@ -19,6 +19,7 @@ Lista de produtos provisória
 				<th scope="col">Nome</th>
 				<th scope="col">Descrição</th>
 				<th scope="col">Valor</th>
+				<th scope="col">Adicionar ao carrinho</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -28,6 +29,7 @@ Lista de produtos provisória
 					<th>${produto.nome}</th>
 					<td>${produto.descricao}</td>
 					<td>${produto.valor}</td>
+					<td>Adicionar</td>
 				</tr>
 			</c:forEach>
 		</tbody>
