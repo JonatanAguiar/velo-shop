@@ -1,3 +1,14 @@
 
 build/
 .settings/
+build/classes/br/com/veloweb/veloshop/acao/Acao.class
+build/classes/br/com/veloweb/veloshop/acao/CarrinhoLista.class
+build/classes/br/com/veloweb/veloshop/acao/FinalizaPedidoForm.class
+build/classes/br/com/veloweb/veloshop/acao/ProdutoInfo.class
+build/classes/br/com/veloweb/veloshop/acao/ProdutoLista.class
+build/classes/br/com/veloweb/veloshop/modelo/Banco.class
+build/classes/br/com/veloweb/veloshop/modelo/Cliente.class
+build/classes/br/com/veloweb/veloshop/modelo/Pedido.class
+build/classes/br/com/veloweb/veloshop/modelo/Produto.class
+build/classes/br/com/veloweb/veloshop/servlet/ControllerServlet.class
+build/classes/br/com/veloweb/veloshop/modelo/Produto.class
