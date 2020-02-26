@@ -6,6 +6,7 @@ import java.util.List;
 public class Banco {
 
 	private static List<Produto> listaDeProdutos = new ArrayList<Produto>();
+	private static List<Cliente> listaDeClientes = new ArrayList<Cliente>();
 	
 	static {
 		

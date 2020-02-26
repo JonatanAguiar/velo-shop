@@ -8,13 +8,27 @@
 <title>Insert title here</title>
 </head>
 <body>
-Carrinho de compras :)
-<ul>
-<c:forEach items="${carrinho}" var="produto">
-<li>
-	${produto.nome }
-</li>
-</c:forEach>
-</ul>
+	<a href="index?acao=ProdutoLista">Lista de Produtos</a>
+	Carrinho de compras :)
+	<div class="container">
+		<table>
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Remover</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${carrinho}" var="produto">
+					<tr>
+						<td><input type="hidden" name="id" value="${produto.id}"/>${produto.nome}</td>
+						<td><input name="quantidade" type="number" value="1" min="1"></td>
+						<td><a href="index?acao=RemoverDoCarrinho&id=${produto.id}">Remover</a></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+		<a href="index?acao=FinalizarPedido">Finalizar Pedido</a>
+	</div>
 </body>
 </html>
