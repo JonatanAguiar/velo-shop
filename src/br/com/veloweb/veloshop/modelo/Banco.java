@@ -56,5 +56,14 @@ public class Banco {
 	public static void setListaDeProdutos(List<Produto> listaDeProdutos) {
 		Banco.listaDeProdutos = listaDeProdutos;
 	}
+
+	public Produto getProdutoPorId(String id) {
+		for(Produto p : listaDeProdutos) {
+			if(Integer.parseInt(id) == p.getId()) {
+				return p;
+			}
+		}
+		return null;
+	}
 	
 }

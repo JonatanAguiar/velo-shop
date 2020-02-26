@@ -26,7 +26,7 @@ Lista de produtos provisória
 			<c:forEach items="${listaDeProdutos}" var="produto">
 				<tr>
 					<th scope="row"></th>
-					<th>${produto.nome}</th>
+					<th><a href="index?acao=ProdutoInfo&id=${produto.id}">${produto.nome}</a></th>
 					<td>${produto.descricao}</td>
 					<td>${produto.valor}</td>
 					<td>Adicionar</td>
