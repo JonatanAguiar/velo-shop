@@ -3,10 +3,21 @@ package br.com.veloweb.veloshop.modelo;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class Pedido {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
+@Entity
+public class Pedido {
+	
+	@Id
+	@GeneratedValue
 	private int id;
+	@ManyToOne
 	private Cliente cliente;
+	@ManyToMany
 	private List<Produto> itensDoPedido;
 	private LocalDateTime dataEHora;
 	private double valorTotal;
