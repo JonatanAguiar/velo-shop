@@ -65,8 +65,8 @@ public class Banco {
 		listaDeClientes.add(cli1);
 		cli2.setId(2);
 		cli2.setCpf("2");
-		cli2.setEndereco("Endereço da Carol");
-		cli2.setNome("Caroline Feliz da Rosa");
+		cli2.setEndereco("Rua Dona Flora, 720, ap 202. Universitário");
+		cli2.setNome("Caroline Paula da Rosa");
 		listaDeClientes.add(cli2);
 		cli3.setId(3);
 		cli3.setCpf("3");
