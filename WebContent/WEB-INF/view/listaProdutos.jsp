@@ -29,12 +29,13 @@ Lista de produtos provisória
 					<th><a href="index?acao=ProdutoInfo&id=${produto.id}">${produto.nome}</a></th>
 					<td>${produto.descricao}</td>
 					<td>${produto.valor}</td>
-					<td>Adicionar</td>
+					<td><a href="index?acao=AdicionaAoCarrinho&id=${produto.id}">Adicionar</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 </div>
+<a href="index?acao=CarrinhoLista">Carrinho de compras</a>
 
 </body>
 </html>
