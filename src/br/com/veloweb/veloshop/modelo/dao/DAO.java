@@ -78,4 +78,20 @@ public class DAO<E> {
 
 		return obj;
 	}
+
+	public E findByCPF(String cpf) {
+		EntityManager em = new ConnectionFactory().getConnection();
+		
+		E obj = null;
+
+		try {
+			obj = (E) em.createQuery("from Cliente where cpf = " + cpf).getSingleResult();
+		} catch (Exception e) {
+			System.err.println(e);
+		} finally {
+			em.close();
+		}
+
+		return obj;
+	}
 }
