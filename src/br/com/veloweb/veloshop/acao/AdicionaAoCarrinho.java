@@ -9,8 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import br.com.veloweb.veloshop.modelo.Banco;
+//import br.com.veloweb.veloshop.modelo.Banco;
 import br.com.veloweb.veloshop.modelo.Produto;
+import br.com.veloweb.veloshop.modelo.dao.DAO;
 
 public class AdicionaAoCarrinho implements Acao {
 
@@ -22,10 +23,12 @@ public class AdicionaAoCarrinho implements Acao {
 
 		String id = request.getParameter("id");
 		HttpSession session = request.getSession();
-		Banco banco = new Banco();
+//		Banco banco = new Banco();
+		DAO dao = new DAO();
 		
 		if(!estaNoCarrinho(id)) {
-			carrinhoLista.add(banco.getProdutoPorId(id));
+//			carrinhoLista.add(banco.getProdutoPorId(id));
+			carrinhoLista.add((Produto) dao.findById(Integer.parseInt(id), Produto.class));
 		} else {
 			System.out.println("Produto já está no carrinho de compras");
 		}
