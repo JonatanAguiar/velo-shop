@@ -15,31 +15,44 @@ public class Banco {
 		produto1.setNome("Produto nro 1");
 		produto1.setDescricao("Este é o produto de nro 1 e é muito bom nossa");
 		produto1.setValor(10);
+		produto1.setImagem("Controle.jpg");
+		
 		Produto produto2 = new Produto();
 		produto2.setId(2);
 		produto2.setNome("Produto nro 2");
 		produto2.setDescricao("Este é o produto de nro 2 e é mais ou menos hm");
 		produto2.setValor(20);
+		produto2.setImagem("HeadSet.jpg");
+		
+		
 		Produto produto3 = new Produto();
 		produto3.setId(3);
 		produto3.setNome("Produto nro 3");
 		produto3.setDescricao("Este é o produto de nro 3 e é ok");
 		produto3.setValor(30);
+		produto3.setImagem("SSD.jpg");
+		
+		
 		Produto produto4 = new Produto();
 		produto4.setId(4);
 		produto4.setNome("Produto nro 4");
 		produto4.setDescricao("Este é o produto de nro 4 e é ");
 		produto4.setValor(40);
+		produto4.setImagem("Monitor.jpg");
+		
 		Produto produto5 = new Produto();
 		produto5.setId(5);
 		produto5.setNome("Produto nro 5");
 		produto5.setDescricao("Este é o produto de nro 5 e ahlelekleklek");
 		produto5.setValor(50);
+		produto5.setImagem("Placa Mae.jpg");
+		
 		Produto produto6 = new Produto();
 		produto6.setId(6);
 		produto6.setNome("Produto nro 6");
 		produto6.setDescricao("Este é o produto de nro 6 e nossa");
 		produto6.setValor(60);
+		produto6.setImagem("Processador.jpg");
 		
 		
 		listaDeProdutos.add(produto1);
