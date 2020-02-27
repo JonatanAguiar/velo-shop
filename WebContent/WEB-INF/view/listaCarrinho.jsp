@@ -15,7 +15,7 @@
 			<c:forEach items="${carrinho}" var="produto">
 				<input type="hidden" name="id" value="${produto.id}" />
 				<input name="nome" value="${produto.nome}" disabled />
-				<input name="quantidade:${produto.id}" type="number" value="1" min="1" style="width:50px">
+				<input name="quantidade:${produto.id}" type="number" value="${produto.quantidade}" min="1" style="width:50px">
 				<a href="index?acao=RemoverDoCarrinho&id=${produto.id}">Remover</a>
 				<br>
 			</c:forEach>

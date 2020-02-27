@@ -18,9 +18,10 @@ public class FinalizarPedido implements Acao {
 
 		HttpSession session = request.getSession();
 		List<Produto> lista = (List<Produto>) session.getAttribute("carrinho");
-		
+
 		lista.forEach(p -> {
 			String quantidade = request.getParameter("quantidade:"+p.getId());
+			session.setAttribute("produtoQuantidade:"+p.getId(), quantidade);
 			p.setQuantidade(Integer.parseInt(quantidade));
 		});
 		

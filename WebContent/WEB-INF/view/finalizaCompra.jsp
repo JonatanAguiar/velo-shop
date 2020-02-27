@@ -10,13 +10,32 @@
 <body>
 	<a href="index?acao=ProdutoLista">Lista de Produtos</a> Finaliza Compra
 
-<table>
-	<c:forEach items="${listaFinalizada}" var="produto">
-		${produto.nome }
-		${produto.quantidade }
-	</c:forEach>
-
-</table>
-
+	<table>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Quantidade</th>
+				<th>Valor</th>
+				<th>Valor total</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:set var="total" value="${0}"/>
+			<c:forEach items="${listaFinalizada}" var="produto">
+				<tr>
+					<td>${produto.nome }</td>
+					<td>${produto.quantidade }</td>
+					<td>${produto.valor }</td>
+					<td><c:out value="${produto.valor * produto.quantidade }"></c:out> </td>
+				</tr>
+				<c:set var="total" value="${total + produto.valor * produto.quantidade}" />
+			</c:forEach>
+		</tbody>
+	</table>
+	Total: ${total}
+	<form action="index?acao=FinalizaCompra" method="POST">
+		<input name="cpf">
+		<button type="submit">Finalizar</button>
+	</form>
 </body>
 </html>
