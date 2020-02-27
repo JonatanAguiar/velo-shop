@@ -14,6 +14,7 @@ public class Produto {
 	private String descricao;
 	private double valor;
 	private int quantidade;
+	private String imagem;
 	
 	public int getId() {
 		return id;
@@ -44,6 +45,12 @@ public class Produto {
 	}
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
+	}
+	public String getImagem() {
+		return imagem;
+	}
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
 	}
 	
 }

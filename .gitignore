@@ -12,3 +12,5 @@ build/classes/br/com/veloweb/veloshop/modelo/Pedido.class
 build/classes/br/com/veloweb/veloshop/modelo/Produto.class
 build/classes/br/com/veloweb/veloshop/servlet/ControllerServlet.class
 build/classes/br/com/veloweb/veloshop/modelo/Produto.class
+.classpath
+.project
