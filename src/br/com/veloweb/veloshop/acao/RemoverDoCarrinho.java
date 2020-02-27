@@ -8,8 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import br.com.veloweb.veloshop.modelo.Banco;
+//import br.com.veloweb.veloshop.modelo.Banco;
 import br.com.veloweb.veloshop.modelo.Produto;
+import br.com.veloweb.veloshop.modelo.dao.DAO;
 
 public class RemoverDoCarrinho implements Acao {
 
@@ -22,8 +23,10 @@ public class RemoverDoCarrinho implements Acao {
 		List<Produto> lista = (List<Produto>) session.getAttribute("carrinho");
 		
 		String id = request.getParameter("id");
-		Banco banco = new Banco();
-		Produto produto = banco.getProdutoPorId(id);
+//		Banco banco = new Banco();
+		DAO dao = new DAO();
+//		Produto produto = banco.getProdutoPorId(id);
+		Produto produto = (Produto) dao.findById(Integer.parseInt(id), Produto.class);
 		
 		if (lista.contains(produto)) {
 			lista.remove(produto);

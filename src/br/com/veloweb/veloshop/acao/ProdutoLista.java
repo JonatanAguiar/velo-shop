@@ -7,8 +7,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.veloweb.veloshop.modelo.Banco;
+//import br.com.veloweb.veloshop.modelo.Banco;
 import br.com.veloweb.veloshop.modelo.Produto;
+import br.com.veloweb.veloshop.modelo.dao.DAO;
 
 public class ProdutoLista implements Acao {
 
@@ -16,8 +17,10 @@ public class ProdutoLista implements Acao {
 	public String executa(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		Banco banco = new Banco();
-		List<Produto> produtos = banco.getListaDeProdutos();
+//		Banco banco = new Banco();
+		DAO dao = new DAO();
+//		List<Produto> produtos = banco.getListaDeProdutos();
+		List<Produto> produtos = dao.findAll("produto");
 		
 		request.setAttribute("listaDeProdutos", produtos);
 		
