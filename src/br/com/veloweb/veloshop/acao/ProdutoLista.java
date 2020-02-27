@@ -20,7 +20,7 @@ public class ProdutoLista implements Acao {
 //		Banco banco = new Banco();
 		DAO dao = new DAO();
 //		List<Produto> produtos = banco.getListaDeProdutos();
-		List<Produto> produtos = dao.findAll("produto");
+		List<Produto> produtos = dao.findAll("Produto");
 		
 		request.setAttribute("listaDeProdutos", produtos);
 		
