@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript" src="js/socoExplosivo.js"></script>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
@@ -13,14 +14,14 @@
 	<div class="container">
 		<form action="index?acao=FinalizarPedido" method="POST">
 			<c:forEach items="${carrinho}" var="produto">
-				<input type="hidden" name="id" value="${produto.id}" />
+				<input type="hidden" id="id" name="id" value="${produto.id}" />
 				<input name="nome" value="${produto.nome}" disabled />
 				<input name="quantidade:${produto.id}" type="number" value="${produto.quantidade}" min="1" style="width:50px">
 				<a href="index?acao=RemoverDoCarrinho&id=${produto.id}">Remover</a>
 				<br>
 			</c:forEach>
 			<div>
-				<button type="submit">Finalizar Compra</button>
+				<button onclick="verificaSeTaTop()" type="submit">Finalizar Compra</button>
 			</div>
 		</form>
 	</div>
