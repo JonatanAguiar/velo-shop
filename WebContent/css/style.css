@@ -424,6 +424,11 @@ ul.cart-list>li.total {
     text-transform: capitalize;
     border-radius: 3px;
 }
+.btn-produto{
+	width: 200px; 
+    height: 40px; 
+    margin-top: 20px;
+}
 
 
 /*.cart-list*/
@@ -794,7 +799,7 @@ ul.cart-list>li.total {
 .single-new-arrival-bg {
     position: relative;
     min-height: 310px;
-    background: #f8f9fc;
+    /*background: #f8f9fc;*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1387,7 +1392,9 @@ span.feature-review {
 #logoVeloWeb{
 	height: 300px;
 	width: 300px; 
-	
-	
+
 }
 
+.desc-produto{
+	padding-top: 30px;
+}
