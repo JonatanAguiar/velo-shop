@@ -23,13 +23,14 @@ public class RemoverDoCarrinho implements Acao {
 		List<Produto> lista = (List<Produto>) session.getAttribute("carrinho");
 		
 		String id = request.getParameter("id");
-//		Banco banco = new Banco();
 		DAO dao = new DAO();
-//		Produto produto = banco.getProdutoPorId(id);
 		Produto produto = (Produto) dao.findById(Integer.parseInt(id), Produto.class);
 		
-		if (lista.contains(produto)) {
-			lista.remove(produto);
+		for (Produto p : lista) {
+			if(p.getId() == produto.getId()) {
+				lista.remove(p);
+				break;
+			}
 		}
 		
 		return "rd:CarrinhoLista";

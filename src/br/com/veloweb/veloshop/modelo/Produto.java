@@ -69,5 +69,9 @@ public class Produto {
 	public String toJson() {
 		return new Gson().toJson(this);
 	}
+	
+	public boolean equals(Produto produto) {
+		return produto.getId() == this.getId();
+	}
 
 }
