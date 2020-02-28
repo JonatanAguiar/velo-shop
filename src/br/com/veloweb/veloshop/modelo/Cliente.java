@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import com.google.gson.Gson;
+
 @Entity
 public class Cliente {
 	
@@ -40,7 +42,9 @@ public class Cliente {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-	
+	public String toJson() {
+		return new Gson().toJson(this);
+	}
 	
 	
 }

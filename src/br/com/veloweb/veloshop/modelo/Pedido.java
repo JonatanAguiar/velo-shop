@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import com.google.gson.Gson;
+
 @Entity
 public class Pedido {
 	
@@ -52,5 +54,7 @@ public class Pedido {
 	public void setValorTotal(double valorTotal) {
 		this.valorTotal = valorTotal;
 	}
-	
+	public String toJson() {
+		return new Gson().toJson(this);
+	}
 }
