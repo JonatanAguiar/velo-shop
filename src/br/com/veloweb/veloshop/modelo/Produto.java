@@ -52,5 +52,8 @@ public class Produto {
 	public void setImagem(String imagem) {
 		this.imagem = imagem;
 	}
+//	public String toXML() {
+//	    return new XStream().toXML(this);
+//	}
 	
 }
