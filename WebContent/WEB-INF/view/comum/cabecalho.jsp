@@ -83,7 +83,7 @@
 						data-target="#navbar-menu">
 						<i class="fa fa-bars"></i>
 					</button>
-					<a class="navbar-brand" href="index.html">VeloShop </a> 
+					<a class="navbar-brand" href="./">VeloShop </a> 
 					<img src="img/logo.png" width="50" height="50" id="logo"/>
 				</div>
 				<!--/.navbar-header-->
