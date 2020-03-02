@@ -36,7 +36,6 @@
 									<th scope="col-sm-2" colspan="2">Produto</th>
 									<th scope="col-sm-2">Quantidade</th>
 									<th scope="col-sm-2"></th>
-
 								</tr>
 							</thead>
 							<tbody>
@@ -56,8 +55,6 @@
 
 									</tr>
 							</tbody>
-
-
 							</c:forEach>
 						</table>
 						<div class="row">
@@ -67,8 +64,6 @@
 							</div>
 						</div>
 				</form>
-
-
 			</div>
 		</c:if>
 	</div>

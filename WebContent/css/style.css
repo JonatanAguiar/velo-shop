@@ -388,6 +388,11 @@ ul.cart-list>li.total {
 	height: 40px;
 	margin-top: 20px;
 }
+.btn-finaliza {
+	width: 200px;
+	height: 40px;
+	
+}
 
 /*.cart-list*/
 
@@ -1333,4 +1338,23 @@ px
 	text-align: -webkit-center;
 	padding-top: 20px;
 	text-transform: none;!important
+}
+
+.table-finaliza{
+	border-style: dashed;
+	border-top-style: none;
+    width: 50% !important; 
+    margin: auto;
+    margin-top: 15px;
+    color: #000;
+	
+}
+.top-finaliza{
+	width: 100% !important;
+}
+
+.form-finaliza{
+	width: 50% !important; 
+    margin: auto;
+    margin-top: 15px;
 }
