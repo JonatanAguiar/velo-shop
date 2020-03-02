@@ -4,7 +4,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!-- import header -->
 <c:import url="comum/header.jsp" />
-<script type="text/javascript" src="js/socoExplosivo.js"></script>
 <!-- import cabecalho -->
 <c:import url="comum/cabecalho.jsp" />
 
@@ -40,13 +39,13 @@
 							</thead>
 							<tbody>
 								<c:forEach items="${carrinho}" var="produto">
-									<input type="hidden" id="id" name="id" value="${produto.id}" />
 
 									<tr>
 										<th><img class="img-produto"
 											src='<c:url value="img/${produto.imagem}"></c:url>'
 											alt="${produto.nome}"></th>
-										<th><input name="nome" value="${produto.nome}" disabled
+										<th><input type="hidden" id="id" name="id"
+											value="${produto.id}" /> <input name="nome" value="${produto.nome}" disabled
 											class="input-nome" /></th>
 										<td><input name="quantidade:${produto.id}" type="number"
 											value="${produto.quantidade}" min="1" style="width: 50px"></td>
@@ -54,15 +53,17 @@
 											href="index?acao=RemoverDoCarrinho&id=${produto.id}">Remover</a></td>
 
 									</tr>
+								</c:forEach>
 							</tbody>
-							</c:forEach>
 						</table>
-						<div class="row">
-							<div class="col-sm-4">
-								<button type="submit" class="btn-cart btn-produto"
-									onclick="verificaSeTaTop()">Finalizar Compra</button>
-							</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4">
+							<button type="submit" class="btn-cart btn-produto"
+								onclick="verificaSeTemAlgoNoCarrinho()">Finalizar
+								Compra</button>
 						</div>
+					</div>
 				</form>
 			</div>
 		</c:if>

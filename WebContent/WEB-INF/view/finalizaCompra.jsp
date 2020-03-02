@@ -51,7 +51,7 @@
 
 				<form action="index?acao=FinalizaCompra" method="POST">
 					<div class="form-group col-md-6">
-						<input type="text" class="form-control" id="cpf" name="cpf"
+						<input type="text" class="form-control" required="required" id="cpf" name="cpf"
 							placeholder="CPF do cliente">
 						
 					</div>

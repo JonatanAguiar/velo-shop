@@ -14,7 +14,7 @@ import javax.ws.rs.core.Response;
 import br.com.veloweb.veloshop.modelo.Pedido;
 import br.com.veloweb.veloshop.modelo.dao.DAO;
 
-@Path("pedidos")
+@Path("/pedidos")
 public class WebServicePedido {
 
 	DAO<Pedido> dao = new DAO<Pedido>();

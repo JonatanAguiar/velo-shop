@@ -14,7 +14,7 @@ import javax.ws.rs.core.Response;
 import br.com.veloweb.veloshop.modelo.Cliente;
 import br.com.veloweb.veloshop.modelo.dao.DAO;
 
-@Path("cliente")
+@Path("/cliente")
 public class WebServiceCliente {
 
 	DAO<Cliente> dao = new DAO<Cliente>();
@@ -27,6 +27,16 @@ public class WebServiceCliente {
 		cliente = (Cliente) dao.findById(id, Cliente.class);
 		return cliente.toJson();
 
+	}
+	
+	@Path("{cpf}")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public String BuscaCPF(@PathParam("cpf") String cpf) {
+		Cliente cliente = new Cliente();
+		cliente = (Cliente) dao.findByCPF(cpf);
+		return cliente.toJson();
+		
 	}
 
 	@POST

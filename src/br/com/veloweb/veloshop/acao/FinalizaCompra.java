@@ -20,13 +20,13 @@ public class FinalizaCompra implements Acao {
 	public String executa(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		DAO<Cliente> dao = new DAO<Cliente>();
+		DAO<Cliente> daoCliente = new DAO<Cliente>();
 		Cliente cliente = new Cliente();
-
-		cliente = dao.findByCPF(request.getParameter("cpf"));
+		String cpfDoCliente = request.getParameter("cpf");
+		cliente = daoCliente.findByCPF(cpfDoCliente);
 
 		if (cliente == null) {
-			System.out.println("erro");
+			//CLIENTE INVÁLIDO
 			return "fw:erro.jsp";
 		}
 
@@ -37,7 +37,7 @@ public class FinalizaCompra implements Acao {
 
 		HttpSession sessao = request.getSession();
 		List<Produto> produtos = (List<Produto>) sessao.getAttribute("carrinho");
-
+		
 		pedido.setItensDoPedido(produtos);
 
 		double total = 0;
@@ -46,10 +46,16 @@ public class FinalizaCompra implements Acao {
 		}
 		
 		pedido.setValorTotal(total);
+		
 		request.setAttribute("pedido", pedido);
+		
+		DAO<Pedido> daoPedido = new DAO<Pedido>();
+		daoPedido.save(pedido, null);
+		
+		produtos.clear();
+		//SUA COMPRA FOI EFETUADA COM SUCESSO :)
 		
 		return "fw:compraEfetuada.jsp";
 
 	}
-
 }

@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!-- import header -->
+<c:import url="comum/header.jsp" />
+<!-- import cabecalho -->
+<c:import url="comum/cabecalho.jsp" />
+
+<section class="new-arrivals">
 
 ${pedido.cliente.nome}
 ${pedido.dataEHora}
@@ -18,5 +17,8 @@ ${produto.quantidade} ${produto.nome} ${produto.valor}
 </c:forEach>
 Valor Total: ${pedido.valorTotal}
 
+
+<a href="index?acao=ProdutoLista"><button class="btn-cart btn-finaliza">OK!</button></a>
+</section>
 </body>
 </html>
