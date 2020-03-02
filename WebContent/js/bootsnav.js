@@ -17,7 +17,7 @@
             this.event();
             this.hoverDropdown();
             this.navbarSticky();
-            this.navbarScrollspy();
+            //this.navbarScrollspy();
         },
         event : function(){
             
