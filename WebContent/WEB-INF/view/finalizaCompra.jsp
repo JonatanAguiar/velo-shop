@@ -55,13 +55,14 @@
 							placeholder="CPF do cliente">
 						
 					</div>
+					
 					<div class="form-group col-md-4">
-						<button id="btn-finaliza" class="btn-cart btn-finaliza">Finalizar Compra</button>
+						<!--<button id="btn-finaliza" class="btn-cart btn-finaliza">Finalizar Compra</button>-->
+						<input type="button" id="btn-finaliza" class="btn-cart btn-finaliza" value="Finalizar compra" >
 					</div>
-
-					
-					
-				</form>
+					</form>
+		
+				
 			</div>
 		</div>
 

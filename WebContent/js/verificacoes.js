@@ -2,8 +2,7 @@ function verificaCPF(msg) {
 	window.alert(msg);
 }
 
-$('#btn-finaliza').click(function(event) {
-	event.preventDefault();
+$('#btn-finaliza').click(function(event) {	
 	var cpf = $("#cpf").val();
 
 	var data = "cpf=" + cpf;
