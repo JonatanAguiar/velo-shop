@@ -17,9 +17,7 @@ public class ProdutoLista implements Acao {
 	public String executa(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-//		Banco banco = new Banco();
 		DAO<Produto> dao = new DAO<Produto>();
-//		List<Produto> produtos = banco.getListaDeProdutos();
 		List<Produto> produtos = dao.findAll("Produto");
 		
 		request.setAttribute("listaDeProdutos", produtos);
