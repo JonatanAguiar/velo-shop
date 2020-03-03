@@ -63,10 +63,6 @@
 						<input type="button" id="btn-finaliza" class="btn-cart btn-finaliza" value="Finalizar compra" >
 					</div>
 				</form>
-
-
-
-
 			</div>
 		</div>
 
