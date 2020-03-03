@@ -33,8 +33,6 @@ public class FinalizaCompra implements Acao {
 		HttpSession sessao = request.getSession();
 		List<Produto> produtos = (List<Produto>) sessao.getAttribute("carrinho");
 		
-		
-		
 		pedido.setItensDoPedido(produtos);
 
 		double total = 0;
