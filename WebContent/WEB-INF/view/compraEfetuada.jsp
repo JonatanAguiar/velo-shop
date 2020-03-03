@@ -8,6 +8,7 @@
 
 <section class="new-arrivals">
 
+<div class="container">
 ${pedido.cliente.nome}
 ${pedido.dataEHora}
 <br>
@@ -15,10 +16,11 @@ ${pedido.dataEHora}
 ${produto.quantidade} ${produto.nome} ${produto.valor}
 <br>
 </c:forEach>
-Valor Total: ${pedido.valorTotal}
+Valor Total: ${pedido.valorTotal} <a href="index?acao=ProdutoLista"><button
+				class="btn-cart btn-finaliza">OK!</button></a>
+	</div>
 
 
-<a href="index?acao=ProdutoLista"><button class="btn-cart btn-finaliza">OK!</button></a>
 </section>
 </body>
 </html>

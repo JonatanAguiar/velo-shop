@@ -1,5 +1,12 @@
-function verificaCPF(msg){
-	window.alert(msg);
+function verificaCPF(){
+	
+	var cpf = document.querySelector("#cpf");
+	
+	//ACESSAR O WEB SERVICE E VERIFICAR SE O CLIENTE É VALIDO
+	//SE NAO FOR ENVIAR UM ALERT("CLIENTE INVALIDO")
+	//SENAO CONTINUAR
+	
+	
 }
 
 function pegaDadosCliente(cpf){

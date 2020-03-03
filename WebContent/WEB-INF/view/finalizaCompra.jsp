@@ -51,19 +51,19 @@
 
 				<form action="index?acao=FinalizaCompra" method="POST">
 					<div class="form-group col-md-6">
-						<input type="text" class="form-control" required="required" id="cpf" name="cpf"
-							placeholder="CPF do cliente">
-						
+						<input type="text" class="form-control" required="required"
+							id="cpf" name="cpf" placeholder="CPF do cliente">
+
 					</div>
 					<div class="form-group col-md-4">
-						
-						<button type="submit" class="btn-cart btn-finaliza"
-									>Finalizar Compra</button>
-					</div>
 
-					
-					
+						<button type="submit" onclick="verificaCPF()"
+							class="btn-cart btn-finaliza">Finalizar Compra</button>
+					</div>
 				</form>
+
+
+
 			</div>
 		</div>
 
@@ -73,6 +73,7 @@
 <c:import url="comum/importJS.jsp" />
 <!-- import rodapé -->
 <c:import url="comum/rodape.jsp" />
+<script type="text/javascript" src="js/verificacoes.js" /></script>
 </body>
 </html>
 
