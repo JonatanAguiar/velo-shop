@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <body>
 
@@ -28,7 +29,7 @@
 								<ul class="dropdown-menu cart-list s-cate">
 									<c:if test="${!empty carrinho}">
 										<c:forEach items="${carrinho}" var="produto">
-											<c:set var="total" value="${total + produto.valor}" />
+											<c:set var="total" value="${total + (produto.valor * produto.quantidade)}" />
 											<c:set var="quantidade"
 												value="${quantidade + produto.quantidade}" />
 											<li class="single-cart-list"><a href="#" class="photo">
@@ -40,8 +41,7 @@
 														<a href="index?acao=ProdutoInfo&id=${produto.id}">${produto.nome}</a>
 													</h6>
 													<p>
-														${produto.quantidade} x - <span class="price">R$
-															${produto.valor }</span>
+														${produto.quantidade} x - <span class="price"><fmt:formatNumber value="${produto.valor}" type="currency" maxFractionDigits="2"></fmt:formatNumber> </span>
 													</p>
 												</div> <!--/.cart-list-txt-->
 												<div class="cart-close">
@@ -51,7 +51,7 @@
 
 									<!--/.single-cart-list --></li>
 							<!--/.single-cart-list -->
-							<li class="total"><span>Total: R$ ${total}</span>
+							<li class="total"><span>Total: <fmt:formatNumber value="${total}" type="currency" maxFractionDigits="2"></fmt:formatNumber> </span>
 								<button class="btn-cart pull-right"
 									onclick="window.location.href='index?acao=CarrinhoLista'">Carrinho</button></li>
 						</ul>

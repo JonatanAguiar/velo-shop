@@ -7,9 +7,12 @@
 <c:import url="comum/cabecalho.jsp" />
 
 <section class="new-arrivals">
-	Erro! O CPF não é de um cliente válido!
+<div class="container">
+		Erro! O CPF não é de um cliente válido!
+		<a href="index?acao=CarrinhoLista"><button
+				class="btn-cart btn-finaliza">Voltar</button></a>
 
-	<a href="index?acao=CarrinhoLista"><button>Voltar</button></a>
+	</div>
 
 </section>
 

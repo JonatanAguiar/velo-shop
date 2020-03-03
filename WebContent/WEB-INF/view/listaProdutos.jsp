@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!-- import header -->
 <c:import url="comum/header.jsp" />
 
@@ -42,7 +43,7 @@
 							<h4>
 								<a href="index?acao=ProdutoInfo&id=${produto.id}">${produto.nome}</a>
 							</h4>
-							<p class="arrival-product-price">R$ ${produto.valor}</p>
+							<p class="arrival-product-price"><fmt:formatNumber value="${produto.valor}" type="currency" maxFractionDigits="2"></fmt:formatNumber></p>
 						</div>
 					</div>
 				</c:forEach>

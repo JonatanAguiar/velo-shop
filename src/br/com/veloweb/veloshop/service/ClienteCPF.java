@@ -1,6 +1,7 @@
 package br.com.veloweb.veloshop.service;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,21 +20,20 @@ public class ClienteCPF extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	DAO<Cliente> dao = new DAO<Cliente>();
 
-	protected void service(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String cpf = (String) request.getParameter("cpf");
 		String json = null;
 		// System.out.println(cpf);
-		Cliente cliente = new Cliente();
-		cliente = (Cliente) dao.findByCPF(cpf);
+		List<Cliente> lista = dao.findAll("Cliente");
 		Gson gson = new Gson();
-		if (cliente != null) {
-			json = gson.toJson(cliente.getCpf());
+		if (lista != null) {
+			json = gson.toJson(lista);
 		} else {
 			json = gson.toJson(null);
 		}
 
+		response.setContentType("application/json");
 		response.getWriter().print(json);
 
 	}

@@ -25,11 +25,6 @@ public class FinalizaCompra implements Acao {
 		String cpfDoCliente = request.getParameter("cpf");
 		cliente = daoCliente.findByCPF(cpfDoCliente);
 
-		/*if (cliente == null) {
-			//CLIENTE INVÁLIDO
-			return "fw:erro.jsp";
-		}*/
-
 		Pedido pedido = new Pedido();
 
 		pedido.setCliente(cliente);
@@ -41,6 +36,11 @@ public class FinalizaCompra implements Acao {
 		pedido.setItensDoPedido(produtos);
 
 		double total = 0;
+		
+		if(produtos.isEmpty()) {
+			return "fw:erroSessaoExpirou.jsp";
+		}
+		
 		for (Produto produto : produtos) {
 			total += produto.getValor() * produto.getQuantidade();
 		}
