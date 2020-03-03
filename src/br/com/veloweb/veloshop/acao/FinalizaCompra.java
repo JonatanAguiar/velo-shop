@@ -33,6 +33,8 @@ public class FinalizaCompra implements Acao {
 		HttpSession sessao = request.getSession();
 		List<Produto> produtos = (List<Produto>) sessao.getAttribute("carrinho");
 		
+		
+		
 		pedido.setItensDoPedido(produtos);
 
 		double total = 0;
@@ -48,6 +50,7 @@ public class FinalizaCompra implements Acao {
 		pedido.setValorTotal(total);
 		
 		request.setAttribute("pedido", pedido);
+		request.setAttribute("listaDeProduto", pedido);
 		
 		DAO<Pedido> daoPedido = new DAO<Pedido>();
 		daoPedido.save(pedido, null);
