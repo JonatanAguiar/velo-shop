@@ -58,7 +58,7 @@ public class FinalizaCompra implements Acao {
 		produtos.clear();
 		//SUA COMPRA FOI EFETUADA COM SUCESSO :)
 		
-		return "fw:compraEfetuada.jsp";
+		return "rd:ProdutoLista";
 
 	}
 }
