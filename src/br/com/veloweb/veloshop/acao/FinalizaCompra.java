@@ -25,11 +25,6 @@ public class FinalizaCompra implements Acao {
 		String cpfDoCliente = request.getParameter("cpf");
 		cliente = daoCliente.findByCPF(cpfDoCliente);
 
-		if (cliente == null) {
-			//CLIENTE INVÁLIDO
-			return "fw:erro.jsp";
-		}
-
 		Pedido pedido = new Pedido();
 
 		pedido.setCliente(cliente);
