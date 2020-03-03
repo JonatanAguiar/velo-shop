@@ -45,7 +45,7 @@
 													</p>
 												</div> <!--/.cart-list-txt-->
 												<div class="cart-close">
-													<span class="lnr lnr-cross"></span>
+													<a href="index?acao=RemoverDoCarrinho&id=${produto.id}"><span class="lnr lnr-cross"></span></a>
 												</div> <!--/.cart-close--></li>
 										</c:forEach>
 

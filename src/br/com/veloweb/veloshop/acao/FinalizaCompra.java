@@ -48,7 +48,6 @@ public class FinalizaCompra implements Acao {
 		pedido.setValorTotal(total);
 		
 		request.setAttribute("pedido", pedido);
-		request.setAttribute("listaDeProduto", pedido);
 		
 		DAO<Pedido> daoPedido = new DAO<Pedido>();
 		daoPedido.save(pedido, null);
