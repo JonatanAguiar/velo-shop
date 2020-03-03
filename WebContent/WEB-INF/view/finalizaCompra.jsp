@@ -49,7 +49,7 @@
 		<div class="col-sm-8 top-finaliza">
 			<div class="form-finaliza row">
 
-				<form action="index?acao=FinalizaCompra" method="POST">
+				<form action="index?acao=FinalizaCompra" method="POST" id="finaliza-compra">
 					<div class="form-group col-md-6">
 						<input type="text" class="form-control" required="required" id="cpf" name="cpf"
 							placeholder="CPF do cliente">
@@ -57,8 +57,7 @@
 					</div>
 					<div class="form-group col-md-4">
 						
-						<button type="submit" class="btn-cart btn-finaliza"
-									>Finalizar Compra</button>
+						<input type="submit" class="btn-cart btn-finaliza" value="Finalizar Compra">
 					</div>
 
 					
@@ -73,6 +72,7 @@
 <c:import url="comum/importJS.jsp" />
 <!-- import rodapé -->
 <c:import url="comum/rodape.jsp" />
+<script type="text/javascript" src='<c:url value="js/verificacoes.js"></c:url>'></script>
 </body>
 </html>
 

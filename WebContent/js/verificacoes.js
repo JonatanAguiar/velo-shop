@@ -1,24 +1,29 @@
-function verificaCPF(msg){
+function verificaCPF(msg) {
 	window.alert(msg);
 }
 
-function pegaDadosCliente(cpf){
+
+$('#finaliza-compra').submit(function(event) {
+	
+	var cpf = $("#cpf").val();
 	var xmlhttp = new XMLHttpRequest();
 
-	var url = "http://localhost:8080/velo-shop/cliente/cpf/"+cpf;
+	var url = "http://localhost:8080/velo-shop/clientes?cpf=" + cpf;
 	xmlhttp.open("GET", url);
-	var array = [];
-	
+	//var array = [];
+
 	xmlhttp.addEventListener("load", function() {
-		var resposta = xmlhttp.responseText;
-		var lista = JSON.parse(resposta);
-		lista.forEach(function(x) {
-			array.push(x);
-		});
+		
+		var resJson = xmlhttp.responseText;
+		var resposta = JSON.parse(resJson);
+		
+		if (resposta == null){
+			alert("CPF nao cadastrado, tente novamente!");
+			event.preventDefault();
+			
+		}
 	});
-
 	xmlhttp.send();
+	return false;
 
-	return array;
-	
-}
+});
