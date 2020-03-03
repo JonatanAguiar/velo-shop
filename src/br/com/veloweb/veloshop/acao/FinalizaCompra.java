@@ -54,7 +54,6 @@ public class FinalizaCompra implements Acao {
 		daoPedido.save(pedido, null);
 		
 		produtos.clear();
-		//SUA COMPRA FOI EFETUADA COM SUCESSO :)
 		
 		return "rd:ProdutoLista";
 

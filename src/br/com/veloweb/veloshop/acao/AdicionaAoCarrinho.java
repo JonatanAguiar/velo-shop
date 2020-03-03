@@ -23,11 +23,9 @@ public class AdicionaAoCarrinho implements Acao {
 
 		String id = request.getParameter("id");
 		HttpSession session = request.getSession();
-//		Banco banco = new Banco();
 		DAO dao = new DAO();
 		
 		if(!estaNoCarrinho(id)) {
-//			carrinhoLista.add(banco.getProdutoPorId(id));
 			carrinhoLista.add((Produto) dao.findById(Integer.parseInt(id), Produto.class));
 		} else {
 			System.out.println("Produto já está no carrinho de compras");

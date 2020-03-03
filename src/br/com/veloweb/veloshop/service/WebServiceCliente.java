@@ -29,16 +29,6 @@ public class WebServiceCliente {
 
 	}
 	
-	@Path("{cpf}")
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public String BuscaCPF(@PathParam("cpf") String cpf) {
-		Cliente cliente = new Cliente();
-		cliente = (Cliente) dao.findByCPF(cpf);
-		return cliente.toJson();
-		
-	}
-
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response adicionaCliente(Cliente cliente) {
