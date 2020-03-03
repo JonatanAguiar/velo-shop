@@ -48,10 +48,10 @@
 													<span class="lnr lnr-cross"></span>
 												</div> <!--/.cart-close--></li>
 										</c:forEach>
-								</ul> <!--/.single-cart-list --></li>
+
+									<!--/.single-cart-list --></li>
 							<!--/.single-cart-list -->
-							<li class="total" onload="setQuantidade(${produto.quantidade})">
-							<!-- <span>Total:R$ ${total}</span>  -->
+							<li class="total"><span>Total: R$ ${total}</span>
 								<button class="btn-cart pull-right"
 									onclick="window.location.href='index?acao=CarrinhoLista'">Carrinho</button></li>
 						</ul>
@@ -65,7 +65,7 @@
 					<!-- End Atribute Navigation -->
 
 					<!-- Start Header Navigation -->
-					<div class="navbar-header" onload="setQuantidade(${quantidade})">
+					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse"
 							data-target="#navbar-menu">
 							<i class="fa fa-bars"></i>
