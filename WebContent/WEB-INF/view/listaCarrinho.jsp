@@ -45,8 +45,8 @@
 											src='<c:url value="img/${produto.imagem}"></c:url>'
 											alt="${produto.nome}"></th>
 										<th><input type="hidden" id="id" name="id"
-											value="${produto.id}" /> <input name="nome" value="${produto.nome}" disabled
-											class="input-nome" /></th>
+											value="${produto.id}" /> <input name="nome"
+											value="${produto.nome}" disabled class="input-nome" /></th>
 										<td><input name="quantidade:${produto.id}" type="number"
 											value="${produto.quantidade}" min="1" style="width: 50px"></td>
 										<td><a
@@ -60,8 +60,7 @@
 					<div class="row">
 						<div class="col-sm-4">
 							<button type="submit" class="btn-cart btn-produto"
-								onclick="verificaSeTemAlgoNoCarrinho()">Finalizar
-								Compra</button>
+								onclick="verificaSeTemAlgoNoCarrinho()">Finalizar Compra</button>
 						</div>
 					</div>
 				</form>
