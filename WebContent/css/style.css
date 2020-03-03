@@ -1358,3 +1358,6 @@ px
     margin: auto;
     margin-top: 15px;
 }
+.modal-footer{
+	border-top: none !important;
+}
