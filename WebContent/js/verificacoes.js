@@ -2,28 +2,27 @@ function verificaCPF(msg) {
 	window.alert(msg);
 }
 
-
-$('#finaliza-compra').submit(function(event) {
-	
+$('#btn-finaliza').click(function(event) {
+	event.preventDefault();
 	var cpf = $("#cpf").val();
-	var xmlhttp = new XMLHttpRequest();
 
-	var url = "http://localhost:8080/velo-shop/clientes?cpf=" + cpf;
-	xmlhttp.open("GET", url);
-	//var array = [];
+	var data = "cpf=" + cpf;
+	var res;
 
-	xmlhttp.addEventListener("load", function() {
+	var url = "http://localhost:8080/velo-shop/clientes";
+
+	$.get(url, // Required URL of the page on server
+	data, function(response, status) {
 		
-		var resJson = xmlhttp.responseText;
-		var resposta = JSON.parse(resJson);
-		
-		if (resposta == null){
-			alert("CPF nao cadastrado, tente novamente!");
-			event.preventDefault();
-			
+		if (status == "success") {
+			res = jQuery.parseJSON(response);
+			if (res == null) {
+				alert("CPF nao cadastrado, digite novamente");
+			}else{
+				$('#finaliza-compra').submit();
+			}
+
 		}
 	});
-	xmlhttp.send();
-	return false;
 
 });

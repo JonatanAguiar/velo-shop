@@ -56,8 +56,7 @@
 						
 					</div>
 					<div class="form-group col-md-4">
-						
-						<input type="submit" class="btn-cart btn-finaliza" value="Finalizar Compra">
+						<button id="btn-finaliza" class="btn-cart btn-finaliza">Finalizar Compra</button>
 					</div>
 
 					
