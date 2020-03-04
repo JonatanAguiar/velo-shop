@@ -4,8 +4,8 @@
 <c:import url="WEB-INF/view/comum/header.jsp" />
 <c:import url="WEB-INF/view/comum/cabecalho.jsp" />
 <c:import url="WEB-INF/view/comum/importJS.jsp" />
-<section id="new-arrivals" class="new-arrivals">
-	<div class="container">
+<section id="new-arrivals" class="new-arrivals" >
+	<div class="container" id="absolute">
 		<div class="section-header">
 			<h2>Bem vindo ao VeloShop</h2>
 			<img src='<c:url value="img/veloweb.jpg"></c:url>' id="logoVeloWeb" >
@@ -15,5 +15,7 @@
 	</div>
 </section>
 <c:import url="WEB-INF/view/comum/rodape.jsp" />
+<script type="text/javascript"
+	src='<c:url value="js/position-footer.js"></c:url>'></script>
 </body>
 </html>

@@ -12,5 +12,6 @@
 		A sessão expirou :(
 	</div>
 </section>
+</div>
 </body>
 </html>
