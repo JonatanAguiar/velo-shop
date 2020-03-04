@@ -74,5 +74,6 @@
 <c:import url="comum/rodape.jsp" />
 <script type="text/javascript"
 	src='<c:url value="js/verificacoes.js"></c:url>'></script>
+</div>
 </body>
 </html>

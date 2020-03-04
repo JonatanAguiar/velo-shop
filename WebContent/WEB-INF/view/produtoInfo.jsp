@@ -8,7 +8,7 @@
 <c:import url="comum/cabecalho.jsp" />
 
 <section class="new-arrivals">
-	<div class="container">
+	<div class="container" id="absolute">
 		<div class="section-header">
 			<h2>${produto.nome}</h2>
 		</div>
@@ -40,5 +40,8 @@
 <c:import url="comum/importJS.jsp" />
 <!-- import rodapé -->
 <c:import url="comum/rodape.jsp" />
+<script type="text/javascript"
+	src='<c:url value="js/position-footer.js"></c:url>'></script>
+</div>
 </body>
 </html>

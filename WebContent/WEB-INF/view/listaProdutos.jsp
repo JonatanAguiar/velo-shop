@@ -9,7 +9,7 @@
 
 
 <section class="new-arrivals">
-	<div class="container">
+	<div class="container ">
 		<div class="section-header">
 			<h2></h2>
 		</div>
@@ -111,6 +111,7 @@
 		}
 	});
 </script>
+</div>
 </body>
 
 </html>
