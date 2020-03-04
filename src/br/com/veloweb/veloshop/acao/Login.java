@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.veloweb.veloshop.modelo.Cliente;
+import br.com.veloweb.veloshop.modelo.Produto;
+import br.com.veloweb.veloshop.modelo.dao.DAO;
 
 public class Login implements Acao {
 
@@ -18,14 +20,17 @@ public class Login implements Acao {
 		String nome = request.getParameter("nome");
 		String cpf = request.getParameter("cpf");
 		
-		
-		HttpSession session = request.getSession();
+		DAO dao = new DAO();
 		Cliente cliente = new Cliente();
-		//cliente
-			
-//		session.setAttribute("usuarioLogado", );
-//		return "rd:VoosLista";
-		return null;
+		cliente  = (Cliente) dao.findByCPF(cpf);
+		
+		if(cliente!=null) {			
+			HttpSession session = request.getSession();
+			session.setAttribute("clienteLogado", cliente);
+			return "rd:ProdutoLista";
+		}else {
+			return "rd:LoginForm";
+		}
 	
 	}
 	
