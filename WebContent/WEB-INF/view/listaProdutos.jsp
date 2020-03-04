@@ -84,7 +84,7 @@
 						</p>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" onClick='window.location.href="index?acao=ProdutoLista"'class="btn btn-default" data-dismiss="modal">Continuar comprando</button>
 					</div>
 				</div>
 
