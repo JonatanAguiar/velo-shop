@@ -62,9 +62,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-4">
-							<button type="submit" class="btn-cart btn-produto"
-								onclick="verificaSeTemAlgoNoCarrinho()">Finalizar
-								Compra</button>
+							<button type="submit" class="btn-cart btn-produto">Finalizar Compra</button>
 						</div>
 					</div>
 				</form>
