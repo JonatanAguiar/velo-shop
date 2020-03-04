@@ -4,7 +4,6 @@
 <c:import url="WEB-INF/view/comum/header.jsp" />
 <c:import url="WEB-INF/view/comum/cabecalho.jsp" />
 <c:import url="WEB-INF/view/comum/importJS.jsp" />
-<c:set var="absolute" value="absolute" />
 <section id="new-arrivals" class="new-arrivals" >
 	<div class="container" id="absolute">
 		<div class="section-header">
