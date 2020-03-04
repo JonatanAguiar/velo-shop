@@ -91,7 +91,7 @@
 								<li class="scroll"><a href="./">Home</a></li>
 								<li class="scroll"><a href="index?acao=ProdutoLista">Vitrine</a></li>
 								<li class="scroll"><a href="index?acao=CarrinhoLista">Carrinho</a></li>
-								<li class="scroll"><a href="index?acao=Login">Minha Conta</a></li>
+								<li class="scroll"><a href="index?acao=LoginForm">Minha Conta</a></li>
 								<li class="scroll"><a href="index?acao=PedidoLista">Pedidos</a></li>
 							</ul>
 							<!--/.nav -->
