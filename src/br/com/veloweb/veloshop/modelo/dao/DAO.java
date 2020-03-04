@@ -94,4 +94,20 @@ public class DAO<E> {
 
 		return obj;
 	}
+	
+    public <T> List<T> findPedidosDoCliente(Integer id) {
+        EntityManager em = new ConnectionFactory().getConnection();
+        
+        List<T> objs = null;;
+
+        try {
+            objs = (List<T>) em.createQuery("from Pedido where cliente = " + id).getResultList();
+        } catch (Exception e) {
+            System.err.println(e);
+        } finally {
+            em.close();
+        }
+
+        return objs;
+    }
 }
