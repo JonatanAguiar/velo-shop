@@ -19,7 +19,7 @@ $('#btn-finaliza').click(function(event) {
 	}
 
 	if (cpfValido) {
-		alert("Compra efetuada com sucesso!");
+		//alert("Compra efetuada com sucesso!");
 		$('#finaliza-compra').submit();
 	} else {
 		alert("Cliente invalido ou nao existente.");

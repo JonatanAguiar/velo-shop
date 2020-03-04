@@ -54,6 +54,12 @@ public class FinalizaCompra implements Acao {
 		
 		produtos.clear();
 		
+		//little gambi
+		DAO<Produto> dao = new DAO<Produto>();
+		List<Produto> produtosLista = dao.findAll("Produto");
+		
+		request.setAttribute("listaDeProdutos", produtosLista);
+		
 		return "fw:listaProdutos.jsp";
 
 	}
