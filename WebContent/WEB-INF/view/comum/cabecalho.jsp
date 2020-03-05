@@ -17,14 +17,17 @@
 
 					<c:set var="total" value="${0}" />
 					<c:set var="quantidade" value="${0}" />
-					<i class="fas fa-sign-out-alt"></i>
+
 
 					<div class="container">
-						
 						<!-- Start Atribute Navigation -->
 						<div class="attr-nav">
 							<ul>
-
+								<li class="nav-setting">
+				                		<c:if test="${!empty clienteLogado}">
+				                			<a href="index?acao=Logout"><span class="lnr lnr-exit"></span></a>
+				                		</c:if>
+				                	</li><!--/.search-->
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown"> <span class="lnr lnr-cart"></span>
 										<span class="badge badge-bg-1" id="quantidadeTotal"></span>
@@ -55,8 +58,8 @@
 															class="lnr lnr-cross"></span></a>
 													</div> <!--/.cart-close--></li>
 											</c:forEach>
-
-
+											
+											
 											<!--/.single-cart-list --></li>
 								<!--/.single-cart-list -->
 								<li class="total"><span>Total: <fmt:formatNumber
@@ -91,21 +94,24 @@
 							id="navbar-menu">
 							<ul class="nav navbar-nav navbar-center" data-in="fadeInDown"
 								data-out="fadeOutUp">
+								<li class="scroll ola">Olá, ${clienteLogado.nome }</li>
 								<li class="scroll"><a href="./">Home</a></li>
 								<li class="scroll"><a href="index?acao=ProdutoLista">Vitrine</a></li>
 								<li class="scroll"><a href="index?acao=CarrinhoLista">Carrinho</a></li>
-								<li class="scroll"><a href="index?acao=LoginForm"> <c:if
-											test="${!empty clienteLogado}">
+								<li class="scroll">
+									<a href="index?acao=LoginForm">
+										<c:if test="${!empty clienteLogado}">
 											Minha Conta
-										</c:if> <c:if test="${empty clienteLogado}">
+										</c:if>
+										<c:if test="${empty clienteLogado}">
 											Login
 										</c:if>
-								</a></li>
+									</a>
+								</li>
 								<li class="scroll"><a href="index?acao=PedidoLista">Pedidos</a></li>
 							</ul>
-
-							<!--  AQUI TEM OS DADOS DO CLIENTE!  -->
-							<div>${clienteLogado.nome}</div>
+							
+							
 							<!--/.nav -->
 						</div>
 						<!-- /.navbar-collapse -->
@@ -122,10 +128,7 @@
 		<!-- /.top-area-->
 		<!-- top-area End -->
 		<script>
-			document.querySelector("#quantidadeTotal").textContent = $
-			{
-				quantidade
-			};
+			document.querySelector("#quantidadeTotal").textContent = ${quantidade};
 		</script>
 		</header>
 		<!--/.welcome-hero-->
