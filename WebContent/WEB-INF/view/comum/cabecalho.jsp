@@ -53,7 +53,8 @@
 															class="lnr lnr-cross"></span></a>
 													</div> <!--/.cart-close--></li>
 											</c:forEach>
-
+											
+											
 											<!--/.single-cart-list --></li>
 								<!--/.single-cart-list -->
 								<li class="total"><span>Total: <fmt:formatNumber
@@ -94,6 +95,9 @@
 								<li class="scroll"><a href="index?acao=LoginForm">Minha Conta</a></li>
 								<li class="scroll"><a href="index?acao=PedidoLista">Pedidos</a></li>
 							</ul>
+							
+							<!--  AQUI TEM OS DADOS DO CLIENTE!  -->
+							<div>${clienteLogado.nome}</div>
 							<!--/.nav -->
 						</div>
 						<!-- /.navbar-collapse -->

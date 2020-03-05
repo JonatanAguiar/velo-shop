@@ -25,8 +25,9 @@ public class autorizacaoFilter implements Filter {
 		
 		HttpSession sessao = request.getSession();
 		boolean clienteNaoEstaLogado = (sessao.getAttribute("clienteLogado") == null);
+		
 		boolean ehUmaAcaoProtegida = (paramAcao.equals("FinalizarPedido")) || (paramAcao.equals("PedidoLista"));
-		if (ehUmaAcaoProtegida & clienteNaoEstaLogado) {
+		if (ehUmaAcaoProtegida && clienteNaoEstaLogado) {
 			response.sendRedirect("index?acao=LoginForm");
 			return;
 		}
