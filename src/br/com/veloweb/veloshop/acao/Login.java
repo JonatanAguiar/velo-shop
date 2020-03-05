@@ -15,7 +15,7 @@ public class Login implements Acao {
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
 		String nome = request.getParameter("nome");
 		String cpf = request.getParameter("cpf");
 
@@ -23,24 +23,22 @@ public class Login implements Acao {
 		Cliente cliente = new Cliente();
 		cliente = (Cliente) dao.findByCPF(cpf);
 		
-		String proximaUrl = request.getParameter("proxUrl");
-		
+		HttpSession sessao = request.getSession();
+		String proximaUrl = (String) sessao.getAttribute("urlPassada");
+		sessao.removeAttribute("urlPassada");
+
 		//SE PROXIMA URL FOR IGUAL A NULL ENTÃO SETA COMO "ProdutoLista", SENÃO PEGA A URL QUE VEIO DO REQUEST.
 		proximaUrl = (proximaUrl == null) ? "ProdutoLista" : proximaUrl;
 				
-		if (cliente != null) {
-			
-			String primeiroNome = cliente.getNome().split(" ")[0];
-			
-			if (primeiroNome.equals(nome)) {
-				HttpSession session = request.getSession();
-				session.setAttribute("clienteLogado", cliente);
-			}
-			
+		if (cliente != null && cliente.getNome().split(" ")[0].equals(nome)) {
+			HttpSession session = request.getSession();
+			session.setAttribute("clienteLogado", cliente);
+			System.out.println(proximaUrl);
 			return "rd:"+proximaUrl;
 		}
-
-		return "rd:LoginForm";
+		
+		request.setAttribute("loginInvalido", "true");
+		return "fw:formLogin.jsp";
 	}
 
 }

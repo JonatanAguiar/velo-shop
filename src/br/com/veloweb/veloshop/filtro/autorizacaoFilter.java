@@ -27,6 +27,11 @@ public class autorizacaoFilter implements Filter {
 		boolean clienteNaoEstaLogado = (sessao.getAttribute("clienteLogado") == null);
 		
 		boolean ehUmaAcaoProtegida = (paramAcao.equals("FinalizarPedido")) || (paramAcao.equals("PedidoLista"));
+		
+		if(ehUmaAcaoProtegida) {
+			sessao.setAttribute("urlPassada", paramAcao);
+		}
+		
 		if (ehUmaAcaoProtegida && clienteNaoEstaLogado) {
 			response.sendRedirect("index?acao=LoginForm");
 			return;
