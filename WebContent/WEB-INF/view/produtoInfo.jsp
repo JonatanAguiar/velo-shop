@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!-- import header -->
 <c:import url="comum/header.jsp" />
 
@@ -20,7 +21,7 @@
 			</div>
 			<div class="col-sm-8">
 				<p>
-					<b>Valor:</b> R$ ${produto.valor}
+					<b>Valor:</b><fmt:formatNumber value="${produto.valor}" type="currency" maxFractionDigits="2"></fmt:formatNumber>
 				</p>
 				<p>
 					<b>Descrição:</b> ${produto.descricao}

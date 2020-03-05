@@ -823,7 +823,7 @@ px
 	color: #000;
 }
 
-.carrinho-vazio{
+.carrinho-vazio,.login{
 	text-align: -webkit-center;
 	padding-top: 20px;
 	text-transform: none;!important
@@ -863,4 +863,8 @@ px
 
 /*---------.modal---------*/
 
+
+.margin{
+	margin-top: 15px;
+}
 

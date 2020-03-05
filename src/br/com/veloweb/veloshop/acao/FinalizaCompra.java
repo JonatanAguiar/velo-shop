@@ -22,6 +22,12 @@ public class FinalizaCompra implements Acao {
 
 		DAO<Cliente> daoCliente = new DAO<Cliente>();
 		Cliente cliente = new Cliente();
+		HttpSession sessao = request.getSession();
+		
+		if(sessao.equals(null)) {
+			return "fw:erroSessaoExpirou.jsp";
+		}
+		
 		String cpfDoCliente = request.getParameter("cpf");
 		cliente = daoCliente.findByCPF(cpfDoCliente);
 
@@ -30,16 +36,11 @@ public class FinalizaCompra implements Acao {
 		pedido.setCliente(cliente);
 		pedido.setDataEHora(LocalDateTime.now());
 
-		HttpSession sessao = request.getSession();
 		List<Produto> produtos = (List<Produto>) sessao.getAttribute("carrinho");
 		
 		pedido.setItensDoPedido(produtos);
 
 		double total = 0;
-		
-		if(produtos.isEmpty()) {
-			return "fw:erroSessaoExpirou.jsp";
-		}
 		
 		for (Produto produto : produtos) {
 			total += produto.getValor() * produto.getQuantidade();
