@@ -94,7 +94,10 @@
 							id="navbar-menu">
 							<ul class="nav navbar-nav navbar-center" data-in="fadeInDown"
 								data-out="fadeOutUp">
-								<li class="scroll ola">Olá, ${clienteLogado.nome }</li>
+								<c:if test="${!empty clienteLogado}">
+									<li class="scroll ola">Olá, ${clienteLogado.nome }</li>
+								</c:if>
+								
 								<li class="scroll"><a href="./">Home</a></li>
 								<li class="scroll"><a href="index?acao=ProdutoLista">Vitrine</a></li>
 								<li class="scroll"><a href="index?acao=CarrinhoLista">Carrinho</a></li>
