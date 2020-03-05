@@ -17,12 +17,14 @@
 
 					<c:set var="total" value="${0}" />
 					<c:set var="quantidade" value="${0}" />
-
+					<i class="fas fa-sign-out-alt"></i>
 
 					<div class="container">
+						
 						<!-- Start Atribute Navigation -->
 						<div class="attr-nav">
 							<ul>
+
 								<li class="dropdown"><a href="#" class="dropdown-toggle"
 									data-toggle="dropdown"> <span class="lnr lnr-cart"></span>
 										<span class="badge badge-bg-1" id="quantidadeTotal"></span>
@@ -53,8 +55,8 @@
 															class="lnr lnr-cross"></span></a>
 													</div> <!--/.cart-close--></li>
 											</c:forEach>
-											
-											
+
+
 											<!--/.single-cart-list --></li>
 								<!--/.single-cart-list -->
 								<li class="total"><span>Total: <fmt:formatNumber
@@ -92,10 +94,16 @@
 								<li class="scroll"><a href="./">Home</a></li>
 								<li class="scroll"><a href="index?acao=ProdutoLista">Vitrine</a></li>
 								<li class="scroll"><a href="index?acao=CarrinhoLista">Carrinho</a></li>
-								<li class="scroll"><a href="index?acao=LoginForm">Minha Conta</a></li>
+								<li class="scroll"><a href="index?acao=LoginForm"> <c:if
+											test="${!empty clienteLogado}">
+											Minha Conta
+										</c:if> <c:if test="${empty clienteLogado}">
+											Login
+										</c:if>
+								</a></li>
 								<li class="scroll"><a href="index?acao=PedidoLista">Pedidos</a></li>
 							</ul>
-							
+
 							<!--  AQUI TEM OS DADOS DO CLIENTE!  -->
 							<div>${clienteLogado.nome}</div>
 							<!--/.nav -->
@@ -114,7 +122,10 @@
 		<!-- /.top-area-->
 		<!-- top-area End -->
 		<script>
-			document.querySelector("#quantidadeTotal").textContent = ${quantidade};
+			document.querySelector("#quantidadeTotal").textContent = $
+			{
+				quantidade
+			};
 		</script>
 		</header>
 		<!--/.welcome-hero-->
