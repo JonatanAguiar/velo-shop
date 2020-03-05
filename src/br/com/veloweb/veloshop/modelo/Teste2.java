@@ -19,21 +19,8 @@ public class Teste2 {
         DAO dao = new DAO();
        
         lstPedido = dao.findPedidosDoCliente(c.getId());
-        System.out.println(lstPedido);
         
-        List<Pedido> lstPedidoComProduto = new ArrayList<Pedido>();
-        
-        for (Pedido pedido : lstPedido) {
-        	System.out.println(pedido.getId());
-        	Pedido pedidoComProduto = new Pedido();
-        	pedidoComProduto.setId(pedido.getId());
-			pedidoComProduto = dao.findByIdComProdutos(pedidoComProduto.getId());
-			lstPedidoComProduto.add(pedidoComProduto);
-			
-		}
-        
-       
-        for (Pedido p : lstPedidoComProduto) {
+        for (Pedido p : lstPedido) {
             System.out.println("ID: " + p.getId());
             System.out.println("VALOR: R$" + p.getValorTotal());
             System.out.println("CLIENTE: " + p.getCliente().getNome());
@@ -43,7 +30,7 @@ public class Teste2 {
                 System.out.println("---------------------");
                 System.out.println("nome: " + prod.getNome());
                 System.out.println("descricao: " + prod.getDescricao());
-                System.out.println("valor: rs" + prod.getValor());
+                System.out.println("valor: R$ " + prod.getValor());
                 System.out.println("quantidade: " + prod.getQuantidade());
                 System.out.println("---------------------");
             }

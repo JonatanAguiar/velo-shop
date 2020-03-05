@@ -84,7 +84,7 @@ public class DAO<E> {
 
 	public E findByCPF(String cpf) {
 		EntityManager em = new ConnectionFactory().getConnection();
-		
+
 		E obj = null;
 
 		try {
@@ -97,14 +97,19 @@ public class DAO<E> {
 
 		return obj;
 	}
-	
-	public <T> List<T> findPedidosDoCliente(Integer id) {
+
+	public <Pedido> List<Pedido> findPedidosDoCliente(Integer id) {
 		EntityManager em = new ConnectionFactory().getConnection();
-		
-		List<T> objs = null;;
+
+		List<Pedido> objs = null;
 
 		try {
-			objs = (List<T>) em.createQuery("from Pedido where cliente = " + id).getResultList();
+			objs = (List<Pedido>) em.createQuery("from Pedido where cliente = " + id).getResultList();
+			objs.forEach(p -> {
+				Query byIdQuery = em.createQuery("FROM Pedido as p JOIN FETCH p.itensDoPedido WHERE p.id = :id");
+				byIdQuery.setParameter("id", ((br.com.veloweb.veloshop.modelo.Pedido) p).getId());
+				p = (Pedido) byIdQuery.getSingleResult();
+			});
 		} catch (Exception e) {
 			System.err.println(e);
 		} finally {
@@ -113,23 +118,5 @@ public class DAO<E> {
 
 		return objs;
 	}
-	
-	
-	public Pedido findByIdComProdutos(int i) {
-		EntityManager em = new ConnectionFactory().getConnection();
-        try {
-            Query byIdQuery = em.createQuery("FROM Pedido as p JOIN FETCH p.itensDoPedido WHERE p.id = :id");
-            byIdQuery.setParameter("id", i);
-            return (Pedido) byIdQuery.getSingleResult();
-        } catch (Exception e) {
-            throw e;
-        } finally {
-            em.close();
-        }
-	}
 
 }
-
-
-
-
