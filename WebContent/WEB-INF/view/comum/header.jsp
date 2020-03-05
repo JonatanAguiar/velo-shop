@@ -20,7 +20,7 @@
 		
 		<!-- For favicon png -->
 		<link rel="shortcut icon" type="image/icon"
-			href="assets/logo/favicon.png" />
+			href='<c:url value="img/favicon.png"></c:url>' />
 		
 		<!--font-awesome.min.css-->
 		<link rel="stylesheet"
