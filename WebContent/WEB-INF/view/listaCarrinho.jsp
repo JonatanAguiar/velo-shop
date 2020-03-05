@@ -17,7 +17,7 @@
 		</div>
 		<!--/.section-header-->
 		<c:if test="${empty carrinho}">
-			<c:set var="absolute" value="absolute" />
+
 			<div class="row carrinho-vazio" id="absolute">
 				<h3>Seu carrinho está vazio!</h3>
 				<p>
