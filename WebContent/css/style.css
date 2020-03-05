@@ -388,10 +388,10 @@ ul.cart-list>li.total {
 	height: 40px;
 	margin-top: 20px;
 }
+
 .btn-finaliza {
 	width: 200px;
 	height: 40px;
-	
 }
 
 /*.cart-list*/
@@ -539,10 +539,6 @@ ul.cart-list>li.total {
 }
 
 /*welcome-hero-content*/
-
-
-
-
 
 /*-------------------------------------
         5. New-arrivals 
@@ -707,7 +703,6 @@ p.arrival-review span {
 	color: #e99c2e;
 }
 
-
 /*-------------------------------------
         11. Footer
 --------------------------------------*/
@@ -716,9 +711,8 @@ p.arrival-review span {
 	display: flex;
 	align-items: center;
 	height: 154px;
-    bottom:0;
-   width:100%;
-    
+	bottom: 0;
+	width: 100%;
 }
 
 .hm-footer-copyright p, .hm-footer-copyright p a {
@@ -726,7 +720,6 @@ p.arrival-review span {
 	font-size: 14px;
 	font-weight: 400;
 }
-
 
 /*===============================
     Scroll Top
@@ -781,13 +774,17 @@ keyframes example { 0% {
 100%
 {
 bottom
+
+
 :
+
  
+
 7
 px
-;
 
-    
+
+;
 }
 }
 
@@ -813,58 +810,64 @@ px
 	width: 100px;
 }
 
-.input-nome{
+.input-nome {
 	border: none;
-    vertical-align: baseline;
-    background-color: white;
+	vertical-align: baseline;
+	background-color: white;
 }
 
-.table-produtos{
+.table-produtos {
 	color: #000;
 }
 
-.carrinho-vazio,.login{
+.carrinho-vazio, .login {
 	text-align: -webkit-center;
 	padding-top: 20px;
-	text-transform: none;!important
+	text-transform: none;
+	!
+	important
 }
-#quantidade{
-	width: 50px; !important
+
+#quantidade {
+	width: 50px;
+	!
+	important
 }
 
 /*---------.produto---------*/
 
 /*---------finaliza---------*/
-.table-finaliza{
+.table-finaliza {
 	border-style: dashed;
 	border-top-style: none;
-    width: 50% !important; 
-    margin: auto;
-    margin-top: 15px;
-    color: #000;
-	
+	width: 50% !important;
+	margin: auto;
+	margin-top: 15px;
+	color: #000;
 }
-.top-finaliza{
+
+.top-finaliza {
 	width: 100% !important;
 }
 
-.form-finaliza{
-	width: 50% !important; 
-    margin: auto;
-    margin-top: 15px;
+.form-finaliza {
+	width: 50% !important;
+	margin: auto;
+	margin-top: 15px;
 }
 /*---------.finaliza---------*/
 
 /*---------modal---------*/
-.modal-footer{
+.modal-footer {
 	border-top: none !important;
 }
 
-
 /*---------.modal---------*/
-
-
-.margin{
+.margin {
 	margin-top: 15px;
 }
 
+.img-user{
+	width: 150px;
+	height: 150px;
+}

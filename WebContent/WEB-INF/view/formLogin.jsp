@@ -15,37 +15,53 @@
 
 
 	<div class="container">
-		<div class="form-group d-flex justify-content-center section-header">
-			<h2>Login</h2>
-		</div>
+		<c:if test="${!empty clienteLogado}">
+			<div class="form-group d-flex justify-content-center section-header">
+				<h2>${clienteLogado.nome}</h2>
+				<div class="row"> 
+					<p> <img alt="imagem usuario" src="img/user.png" class="img-user">
+					<p><b>CPF:</b> ${clienteLogado.cpf}</p>	
+					<p><b>Endereço:</b> ${clienteLogado.endereco}</p>	
+					<p><a href="index?acao=PedidoLista" class="btn-produto">Meus pedidos</a></p>
+					<p><a href="index?acao=Logout" class="btn-produto">Logout</a></p>	
+						
+				</div>
+			</div>
+		</c:if>
+		<c:if test="${empty clienteLogado}">
+			<div class="form-group d-flex justify-content-center section-header">
+				<h2>Login</h2>
+			</div>
 
 
-		<form action="${link}" method="POST" name="formulario">
-			<div class="row">
-				<div class="col-sm-4 col-sm-offset-4 hid">
-					<div class="row">
-						<label>Nome</label> <input type="text" name="nome" id="nome"
-						class="form-control " placeholder="Digite seu primeiro nome" required>
+			<form action="${link}" method="POST" name="formulario">
+				<div class="row">
+					<div class="col-sm-4 col-sm-offset-4 hid">
+						<div class="row">
+							<label>Nome</label> <input type="text" name="nome" id="nome"
+								class="form-control " placeholder="Digite seu primeiro nome"
+								required>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-4 col-sm-offset-4 hid margin">
-					<div class="row">
-						<label>CPF </label> <input type="password" name="cpf" id="cpf"
-						class="form-control" placeholder="Digite seu CPF" required>
+				<div class="row">
+					<div class="col-sm-4 col-sm-offset-4 hid margin">
+						<div class="row">
+							<label>CPF </label> <input type="password" name="cpf" id="cpf"
+								class="form-control" placeholder="Digite seu CPF" required>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-4 col-sm-offset-5 hid">
-					<div class="row">
-						<button class="btn-cart btn-produto">Logar</button>
+				<div class="row">
+					<div class="col-sm-4 col-sm-offset-5 hid">
+						<div class="row">
+							<button class="btn-cart btn-produto">Logar</button>
+						</div>
 					</div>
 				</div>
-			</div>
-			
-		</form>
+
+			</form>
+		</c:if>
 	</div>
 
 
