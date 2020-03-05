@@ -25,7 +25,7 @@
 				<div class="col-sm-4 col-sm-offset-4 hid">
 					<div class="row">
 						<label>Nome</label> <input type="text" name="nome" id="nome"
-						class="form-control " placeholder="Nome" required>
+						class="form-control " placeholder="Digite seu primeiro nome" required>
 					</div>
 				</div>
 			</div>
@@ -33,7 +33,7 @@
 				<div class="col-sm-4 col-sm-offset-4 hid margin">
 					<div class="row">
 						<label>CPF </label> <input type="password" name="cpf" id="cpf"
-						class="form-control" placeholder="Digite o CPF" required>
+						class="form-control" placeholder="Digite seu CPF" required>
 					</div>
 				</div>
 			</div>
