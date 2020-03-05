@@ -73,5 +73,10 @@ public class Produto {
 	public boolean equals(Produto produto) {
 		return produto.getId() == this.getId();
 	}
+	
+	@Override
+	public String toString() {
+		return this.getNome();
+	}
 
 }
