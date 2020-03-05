@@ -12,12 +12,19 @@
 <section class="new-arrivals">
 	<div class="container">
 		<c:forEach items="${listaDePedidos}" var="pedido">
-			${pedido.dataEHora}
-			${pedido.valorTotal}
+			<fmt:parseDate value="${pedido.dataEHora}"
+								pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
+							<fmt:formatDate pattern="dd/MM/yyyy HH:mm"
+								value="${parsedDateTime}" />
 			<br>
-			Lista de produtos do pedido:
-			
-			<br>
+			Produtos:
+			<ul>
+				<c:forEach items="${pedido.itensDoPedido}" var="produto">
+					<li>${produto.nome} - ${produto.descricao}</li>
+				</c:forEach>
+			</ul>
+			Valor Total da Compra: <fmt:formatNumber value="${pedido.valorTotal}" type="currency" maxFractionDigits="2"></fmt:formatNumber>
+			<br><br>
 		</c:forEach>
 	</div>
 </section>

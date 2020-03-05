@@ -64,7 +64,12 @@
 		</c:if>
 	</div>
 
+	<c:if test="${loginInvalido == 'true'}">
+		
+	AQUI MOSTRA A MODAL SE DEU ERRO CARAII
 
+
+	</c:if>
 
 
 	</div>

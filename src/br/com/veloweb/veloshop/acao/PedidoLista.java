@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import br.com.veloweb.veloshop.modelo.Cliente;
 import br.com.veloweb.veloshop.modelo.Pedido;
 import br.com.veloweb.veloshop.modelo.dao.DAO;
 
@@ -20,11 +21,10 @@ public class PedidoLista implements Acao {
 		DAO<Pedido> daoPedido = new DAO<Pedido>();
 		
 		//PEGA O ID DO CLIENTE PELA SESSAO
-		//HttpSession sessao = request.getSession();
-		//Integer id = Integer.parseInt(sessao.getAttribute("idDoCliente"));
-		//List<Pedido> listaDePedidos = daoPedido.findPedidosDoCliente(id);
+		HttpSession sessao = request.getSession();
+		Cliente cliente = (Cliente) sessao.getAttribute("clienteLogado");
+		List<Pedido> listaDePedidos = daoPedido.findPedidosDoCliente(cliente.getId());
 		
-		List<Pedido> listaDePedidos = daoPedido.findPedidosDoCliente(13);
 		
 		request.setAttribute("listaDePedidos", listaDePedidos);
 		
