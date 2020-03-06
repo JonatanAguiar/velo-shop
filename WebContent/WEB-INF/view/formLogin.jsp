@@ -18,13 +18,23 @@
 		<c:if test="${!empty clienteLogado}">
 			<div class="form-group d-flex justify-content-center section-header">
 				<h2>${clienteLogado.nome}</h2>
-				<div class="row"> 
-					<p> <img alt="imagem usuario" src="img/user.png" class="img-user">
-					<p><b>CPF:</b> ${clienteLogado.cpf}</p>	
-					<p><b>Endereço:</b> ${clienteLogado.endereco}</p>	
-					<p><a href="index?acao=PedidoLista" class="btn-produto">Meus pedidos</a></p>
-					<p><a href="index?acao=Logout" class="btn-produto">Logout</a></p>	
-						
+				<div class="row">
+					<p>
+						<img alt="imagem usuario" src="img/user.png" class="img-user">
+					<p>
+						<b>CPF:</b> ${clienteLogado.cpf}
+					</p>
+					<p>
+						<b>Endereço:</b> ${clienteLogado.endereco}
+					</p>
+					<p>
+						<a href="index?acao=PedidoLista" class="btn-produto">Meus
+							pedidos</a>
+					</p>
+					<p>
+						<a href="index?acao=Logout" class="btn-produto">Logout</a>
+					</p>
+
 				</div>
 			</div>
 		</c:if>
@@ -64,12 +74,10 @@
 		</c:if>
 	</div>
 
-	<c:if test="${loginInvalido == 'true'}">
-		
-	AQUI MOSTRA A MODAL SE DEU ERRO CARAII
-
-
+	<c:if test="${empty loginInvalido}">
+		<c:set var="loginInvalido" value="${false}" />
 	</c:if>
+
 
 
 	</div>
@@ -81,6 +89,11 @@
 
 <script type="text/javascript"
 	src='<c:url value="js/position-footer.js"></c:url>'></script>
+<script>
+	if(${loginInvalido}){
+		alert("Login inválido, tente novamente");
+	}
+</script>
 </div>
 </body>
 </html>
