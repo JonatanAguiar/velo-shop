@@ -776,12 +776,18 @@ keyframes example { 0% {
 bottom
 
 
+
+
 :
+
 
  
 
+
 7
 px
+
+
 
 
 ;
@@ -867,12 +873,23 @@ px
 	margin-top: 15px;
 }
 
-.img-user{
+.img-user {
 	width: 150px;
 	height: 150px;
 }
 
-.ola{
+.ola {
 	padding-top: 50px;
-    padding-right: 20px;
+	padding-right: 20px;
+}
+
+.font-button {
+	font-weight: 400;
+}
+.status{
+	color: #34b334;
+    font-weight: 500;
+}
+.small-font{
+	font-size: small !important;
 }

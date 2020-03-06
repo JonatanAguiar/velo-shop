@@ -52,6 +52,8 @@
 		<!--responsive.css-->
 		<link rel="stylesheet"
 			href='<c:url value="/css/responsive.css"></c:url>'>
+			
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
 	
 	
 	</head>
