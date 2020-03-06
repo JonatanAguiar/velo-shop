@@ -25,7 +25,7 @@ public class Login implements Acao {
 		
 		HttpSession sessao = request.getSession();
 		String proximaUrl = (String) sessao.getAttribute("urlPassada");
-		sessao.removeAttribute("urlPassada");
+//		sessao.removeAttribute("urlPassada");
 
 		//SE PROXIMA URL FOR IGUAL A NULL ENTÃO SETA COMO "ProdutoLista", SENÃO PEGA A URL QUE VEIO DO REQUEST.
 		proximaUrl = (proximaUrl == null) ? "ProdutoLista" : proximaUrl;
@@ -33,7 +33,6 @@ public class Login implements Acao {
 		if (cliente != null && cliente.getNome().split(" ")[0].equals(nome)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("clienteLogado", cliente);
-			System.out.println(proximaUrl);
 			return "rd:"+proximaUrl;
 		}
 		

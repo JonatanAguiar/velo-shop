@@ -50,7 +50,7 @@
 											value="${produto.id}" /> <input name="nome"
 											value="${produto.nome}" disabled class="input-nome" /></th>
 										<td><input name="quantidade:${produto.id}" type="number"
-											value="${produto.quantidade}" min="1" max="100"
+											value="${produto.quantidade}" min="1" max="100" required 
 											id="quantidade"></td>
 										<td><a
 											href="index?acao=RemoverDoCarrinho&id=${produto.id}">Remover</a></td>

@@ -14,7 +14,8 @@ public class Logout implements Acao {
 			throws ServletException, IOException {
 		
 		HttpSession sessao = request.getSession();
-		sessao.invalidate();
+		sessao.removeAttribute("carrinho");
+		sessao.removeAttribute("clienteLogado");
 		
 		return "rd:LoginForm";
 	}
