@@ -61,8 +61,7 @@
 													value="${produto.valor * produto.quantidade }"
 													type="currency" maxFractionDigits="2"></fmt:formatNumber></td>
 										</tr>
-										<c:set var="total"
-											value="${total + produto.valor * produto.quantidade}" />
+										
 									</c:forEach>
 									<th>Total da Compra</th>
 									<td colspan="3"><fmt:formatNumber
